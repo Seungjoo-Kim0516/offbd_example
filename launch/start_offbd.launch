@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Include the Mavros node with SITL and Gazebo -->
+	
+	<include file="$(find mavros)/launch/px4.launch">
+	</include>
+	
+	<param name="r" type="double" value="1.0" />
+	<param name="wn" type="double" value="1.0" />
+	<!-- Our node to control the drone ?-->
+	<node pkg="offbd_cpp" type="offbd_node" name="offbd_node" required="true" output="screen" />
+</launch>
